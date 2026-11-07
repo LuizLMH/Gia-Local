@@ -44,7 +44,7 @@ $content = file("comercio.csv");
     <main class="max-w-full w-5/5 mx-auto border p-18  ">
 
         <div class="pai flex border border-t-transparent border-l-transparent border-r-transparent w-auto border-b-cyan-400">
-            <div class="filha">
+            <div class="">
                 <h1>Guia Local - Novo Cruzeiro</h1>
                 <p>Comércios da cidade</p>
             </div>
@@ -53,7 +53,8 @@ $content = file("comercio.csv");
             <div class="">
                 <h2 class="py-5">Categorias</h2>
                 <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="index.php">Todos</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Restaurante">Restaurantes</a>
+                <!-- <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Restaurante">Restaurantes</a> -->
+                <button onclick="loadDoc('?tipo=Restaurante')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Restaurantes</button>
                 <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Farmacia">Farmácias</a>
                 <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Pizzaria">Pizzaria</a>
                 <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Servicos">Serviços</a>
@@ -62,27 +63,26 @@ $content = file("comercio.csv");
                 <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Vestuário">Vestuario</a>
             </div>
         </div>
+
         <div class="flex flex-wrap justify-center">
             <?php
             for ($i = 0; $i <= count($content) - 1; $i++) {
                 $linha = explode(';', $content[$i]);
                 // var_dump($linha)
-
                 if (trim($linha[4]) == $tipo) {
 
-
             ?>
-                    <div class="flex ">
+                    <div class="flex">
 
                         <div class="border border-cyan-400 mt-6 rounded-xl flex m-4 p-3 w-60">
                             <div class="filha3">
-                                <div class="w-full inline-flex justify-end">
+                                <div class="w-full inline-flex justify-endd">
                                     <img class="flex align-left " src="icons/cooking-pot.svg" alt="Ícone">
                                 </div>
 
                                 <div class="">
                                     <h1 class="text-2xl"><?php echo "$linha[0]"; ?></h1>
-                                    <a class="border bg-cyan-300 rounded-xl p-0.3 flex items-center justify-center mb-2 mt-2 " href="#">Redes Sociais</a>
+                                    <a class="border bg-cyan-300 rounded-xl p-0.3 flex items-center justify-center mb-2 mt-2" href="#">Redes Sociais</a>
                                     <p class="mb-2">
                                         <?php
                                         echo "$linha[4]";
@@ -117,17 +117,17 @@ $content = file("comercio.csv");
                 } elseif (empty($tipo)) {
                 ?>
 
-                    <div class="flex ">
+                    <div class="flex">
 
-                        <div class="border border-cyan-400 mt-6 rounded-xl flex m-4 p-3 w-60">
-                            <div class="filha3">
+                        <div class="border-2 border-cyan-400 mt-6 rounded-xl flex m-4 p-3 w-60">
+                            <div class=" rounded-2xl shadow-2xl p-2">
                                 <div class="w-full inline-flex justify-end">
                                     <img class="flex align-left " src="icons/cooking-pot.svg" alt="Ícone">
                                 </div>
 
                                 <div class="">
                                     <h1 class="text-2xl"><?php echo "$linha[0]"; ?></h1>
-                                    <a class="border bg-cyan-300 rounded-xl p-0.3 flex items-center justify-center mb-2 mt-2 " href="#">Redes Sociais</a>
+                                    <a class=" redes-sociais border bg-cyan-300 rounded-xl p-0.3 flex items-center justify-center mb-2 mt-2 " href="#">Redes Sociais</a>
                                     <p class="mb-2">
                                         <?php
                                         echo "$linha[4]";
@@ -172,6 +172,9 @@ $content = file("comercio.csv");
         </div>
 
     </main>
+
+
+    <script src="app.js" defer></script>
 </body>
 
 </html>
