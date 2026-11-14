@@ -17,7 +17,7 @@ let colors = [
 
 
 function get_random(list) {
-  return list[Math.floor((Math.random()*list.length))];
+    return list[Math.floor((Math.random() * list.length))];
 }
 
 window.onload = function () {
@@ -35,12 +35,12 @@ window.onload = function () {
 }
 
 function loadDoc(query) {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-
-      document.getElementsByClassName("av").innerHTML =  this.response;
-      console.log(this.response);
-  }
-  xhttp.open("GET", query);
-  xhttp.send();
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        document.getElementById("ler").innerHTML = this.response;
+        console.log(this.response);
+    }
+    xhttp.open("GET", query);
+    xhttp.send();
 }
+

@@ -39,12 +39,12 @@ $content = file("comercio.csv");
     <link rel="stylesheet" href="output.css">
 </head>
 
-<body class="select-none">
+<body>
 
-    <main class="max-w-full w-5/5 mx-auto border p-18  ">
+    <main id="ler" class=" ">
 
         <div class="pai flex border border-t-transparent border-l-transparent border-r-transparent w-auto border-b-cyan-400">
-            <div class="">
+            <div class=" items-center justify-center">
                 <h1>Guia Local - Novo Cruzeiro</h1>
                 <p>Comércios da cidade</p>
             </div>
@@ -52,15 +52,14 @@ $content = file("comercio.csv");
         <div class="pai2">
             <div class="">
                 <h2 class="py-5">Categorias</h2>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="index.php">Todos</a>
-                <!-- <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Restaurante">Restaurantes</a> -->
+                <button onclick="loadDoc('index.php')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Todos</button>
                 <button onclick="loadDoc('?tipo=Restaurante')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Restaurantes</button>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Farmacia">Farmácias</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Pizzaria">Pizzaria</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Servicos">Serviços</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Supermercado">Supermercados</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Padaria">Padarias</a>
-                <a class=" border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50" href="?tipo=Vestuário">Vestuario</a>
+                <button onclick="loadDoc('?tipo=Farmacia')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Farmácias</button>
+                <button onclick="loadDoc('?tipo=Pizzaria')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Pizzaria</button>
+                <button onclick="loadDoc('?tipo=Servicos')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Serviços</button>
+                <button onclick="loadDoc('?tipo=Supermercado')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Supermercados</button>
+                <button onclick="loadDoc('?tipo=Padaria')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Padarias</button>
+                <button onclick="loadDoc('?tipo=Vestuário')" class="border bg-cyan-300 p-1 mt-10 rounded-xl hover:bg-amber-50">Vestuário</button>
             </div>
         </div>
 
@@ -125,7 +124,7 @@ $content = file("comercio.csv");
                                     <img class="flex align-left " src="icons/cooking-pot.svg" alt="Ícone">
                                 </div>
 
-                                <div class="">
+                                <div>
                                     <h1 class="text-2xl"><?php echo "$linha[0]"; ?></h1>
                                     <a class=" redes-sociais border bg-cyan-300 rounded-xl p-0.3 flex items-center justify-center mb-2 mt-2 " href="#">Redes Sociais</a>
                                     <p class="mb-2">
